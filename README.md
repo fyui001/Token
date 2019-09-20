@@ -1,30 +1,19 @@
 # トークンを生成してデータベースに挿入するやつ
+## 概要
+ユニークな文字列(トークン)をランダムで生成して、DBに保存する。
+DBに保存されている文字列の衝突(コンフリクト)の確認を行い追加することもできる。
 
- 　一意性のあるトークンを作りデータベースに挿入できます
- 
- ---
- 
- 
- 
- 
-# 設定（例）
+## 設定（例）
 
-
-　・トークンに使用する文字や記号を入れる  
- `$token_char = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';`
-
+・トークンに使用する文字や記号を入れる  
+ `$charSet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';`
 
 ・生成するトークンの数  
-` $token_n = '1000'; `
-
+` $tokenNum = 1000000; `
 
 ・生成するトークンの文字数（長さ）  
-` $token_len = '64'; `
-
+` $tokenLen = 64; `
 
 ・すでにDBにあるトークンをリセットするためのフラグ   
- trueならリセットして挿入, falseならDB内のトークンのコンフリクトを調査してトークンを追加する  
-` $token_ResetFlg = true; `
-
-
-
+ trueならリセットして挿入, falseならDB内のトークンをコンフリクトを調査してトークンを追加する  
+` $ResetFlg = true; `
